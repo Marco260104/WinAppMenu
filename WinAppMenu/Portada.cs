@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace WinAppMenu
 {
-    public partial class HOOOHOHHO : Form
+    public partial class Portada : Form
     {
-        public HOOOHOHHO()
+        public Portada()
         {
             InitializeComponent();
+        }
+
+        private void btnAgregarMochila_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login log = new login();
+            log.ShowDialog();
         }
     }
 }
