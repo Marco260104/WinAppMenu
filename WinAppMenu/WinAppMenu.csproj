@@ -167,6 +167,12 @@
     <Compile Include="FrmMostrarMaletasPorUso.Designer.cs">
       <DependentUpon>FrmMostrarMaletasPorUso.cs</DependentUpon>
     </Compile>
+    <Compile Include="HOOOHOHHO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOOOHOHHO.Designer.cs">
+      <DependentUpon>HOOOHOHHO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mochila.cs" />
     <Compile Include="MostrarEditar.cs">
       <SubType>Form</SubType>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMostrarMaletasPorUso.resx">
       <DependentUpon>FrmMostrarMaletasPorUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOOOHOHHO.resx">
+      <DependentUpon>HOOOHOHHO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MostrarEditar.resx">
       <DependentUpon>MostrarEditar.cs</DependentUpon>
