@@ -36,7 +36,7 @@ namespace WinAppMenu
         {
             try
             {
-                string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+                string rutaXml = Path.Combine(Application.StartupPath,"XML", "Mochilas.xml");
                 DataSet ds = new DataSet();
 
                 if (!File.Exists(rutaXml))
