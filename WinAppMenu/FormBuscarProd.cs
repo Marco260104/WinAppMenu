@@ -20,10 +20,15 @@ namespace WinAppMenu
 
         private bool esModoReset = false;
 
-      
         private string ObtenerRutaArchivo(string nombreArchivo)
         {
             return Path.Combine(Application.StartupPath, "IMAGENES", nombreArchivo);
+        }
+
+        private string ObtenerRutaXml()
+        {
+            // Ruta para el archivo XML en la carpeta "XML"
+            return Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
@@ -72,7 +77,13 @@ namespace WinAppMenu
 
                 string valorMarca = TxtBuscarMarca.Text.Trim().Replace("'", "''"); // Escapar comillas simples
 
-                string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+                string rutaXml = ObtenerRutaXml(); // Obtener la ruta dinámica del XML
+
+                // Verificar si la carpeta "XML" existe, si no, crearla
+                if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
+                {
+                    Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
+                }
 
                 // Leer XML
                 dataSet11.ReadXml(rutaXml);
@@ -126,10 +137,9 @@ namespace WinAppMenu
 
         private void TxtBuscarCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-       
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
             else if (e.KeyChar == (char)Keys.Enter)
             {
@@ -137,12 +147,12 @@ namespace WinAppMenu
             }
         }
 
-       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-          
         }
 
-        
+        private void FormBuscarProd_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
