@@ -292,6 +292,7 @@
     <EmbeddedResource Include="ReportePorProveedor.rdlc" />
     <EmbeddedResource Include="ReportePorUso.rdlc" />
     <EmbeddedResource Include="ReporteTotal.rdlc" />
+    <EmbeddedResource Include="ReportTOL.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -367,9 +368,7 @@
     <Content Include="IMAGENES\moch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="XML\Mochilas.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="XML\Mochilas.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
