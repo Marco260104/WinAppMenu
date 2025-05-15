@@ -31,24 +31,34 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaletasPorPrecio));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new WinAppMenu.DataSet1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataSet1 = new WinAppMenu.DataSet1();
-            this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tblDatosBindingSource
+            // 
+            this.tblDatosBindingSource.DataMember = "TblDatos";
+            this.tblDatosBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(46, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(109, 108);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -73,10 +83,10 @@
             reportDataSource2.Value = this.tblDatosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorPrecio.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(232, 167);
+            this.reportViewer1.Location = new System.Drawing.Point(179, 167);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(570, 265);
+            this.reportViewer1.Size = new System.Drawing.Size(672, 284);
             this.reportViewer1.TabIndex = 6;
             // 
             // btnMostrar
@@ -87,7 +97,7 @@
             this.btnMostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMostrar.Location = new System.Drawing.Point(670, 100);
+            this.btnMostrar.Location = new System.Drawing.Point(662, 104);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(119, 34);
             this.btnMostrar.TabIndex = 54;
@@ -98,7 +108,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Font = new System.Drawing.Font("Segoe UI Emoji", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.Location = new System.Drawing.Point(492, 100);
+            this.txtPrecio.Location = new System.Drawing.Point(484, 104);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(160, 34);
@@ -110,27 +120,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(110)))));
-            this.label3.Location = new System.Drawing.Point(237, 100);
+            this.label3.Location = new System.Drawing.Point(229, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 31);
+            this.label3.Size = new System.Drawing.Size(240, 31);
             this.label3.TabIndex = 52;
-            this.label3.Text = "Ingrese un precio:";
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblDatosBindingSource
-            // 
-            this.tblDatosBindingSource.DataMember = "TblDatos";
-            this.tblDatosBindingSource.DataSource = this.dataSet1;
+            this.label3.Text = "Ingrese el precio:";
             // 
             // FrmMaletasPorPrecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(932, 462);
+            this.ClientSize = new System.Drawing.Size(932, 534);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label3);
@@ -141,9 +141,9 @@
             this.Name = "FrmMaletasPorPrecio";
             this.Text = "FrmMaletasPorPrecio";
             this.Load += new System.EventHandler(this.FrmMaletasPorPrecio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
