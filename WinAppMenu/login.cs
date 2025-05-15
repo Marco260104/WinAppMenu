@@ -199,5 +199,50 @@ namespace WinAppMenu
                 btnAgregarMochila.Focus();
             }
         }
+
+        private void btnAgregarMochila_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (Char)Keys.Enter) {
+                string usuario = nombre.Text.Trim();
+                string contrasena = contraseña.Text;
+
+                // Validar campos vacíos o con texto por defecto
+                if (string.IsNullOrEmpty(usuario) || usuario == "Ingrese su usuario")
+                {
+                    MessageBox.Show("Por favor ingrese su usuario.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    nombre.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(contrasena) || contrasena == "Ingrese la contraseña")
+                {
+                    MessageBox.Show("Por favor ingrese su contraseña.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    contraseña.Focus();
+                    return;
+                }
+
+                // Validar que la contraseña no contenga espacios
+                if (contrasena.Contains(" "))
+                {
+                    MessageBox.Show("La contraseña no debe contener espacios.", "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    contraseña.Focus();
+                    return;
+                }
+
+                // Si pasó las validaciones, verificar usuario y contraseña
+                if (VerificarUsuario(usuario, contrasena))
+                {
+                    this.Hide();
+                    Form1 frm = new Form1();
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    contraseña.Clear();
+                    contraseña.Focus();
+                }
+            }
+        }
     }
 }
