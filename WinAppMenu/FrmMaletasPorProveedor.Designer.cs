@@ -29,33 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaletasPorProveedor));
-            this.tblDatosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblDatosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new WinAppMenu.DataSet1();
+            this.tblDatosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tblDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tblDatosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).BeginInit();
+            this.tblDatosBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtnBuscar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblDatosBindingSource2
+            // tblDatosBindingSource3
             // 
-            this.tblDatosBindingSource2.DataMember = "TblDatos";
-            this.tblDatosBindingSource2.DataSource = this.dataSet1;
+            this.tblDatosBindingSource3.DataMember = "TblDatos";
+            this.tblDatosBindingSource3.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblDatosBindingSource2
+            // 
+            this.tblDatosBindingSource2.DataMember = "TblDatos";
+            this.tblDatosBindingSource2.DataSource = this.dataSet1;
             // 
             // tblDatosBindingSource
             // 
@@ -64,9 +74,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.tblDatosBindingSource3;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource4.Name = "DataSet1";
+            reportDataSource4.Value = this.tblDatosBindingSource4;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorProveedor.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(25, 131);
             this.reportViewer1.Name = "reportViewer1";
@@ -101,28 +111,68 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mochilas por Proveedor";
             // 
-            // tblDatosBindingSource3
+            // tblDatosBindingSource4
             // 
-            this.tblDatosBindingSource3.DataMember = "TblDatos";
-            this.tblDatosBindingSource3.DataSource = this.dataSet1;
+            this.tblDatosBindingSource4.DataMember = "TblDatos";
+            this.tblDatosBindingSource4.DataSource = this.dataSet1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(110)))));
+            this.label2.Location = new System.Drawing.Point(125, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(232, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Escriba el Proveedor";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(363, 81);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 9;
+            // 
+            // BtnBuscar
+            // 
+            this.BtnBuscar.BackgroundImage = global::WinAppMenu.Properties.Resources.btnAzul;
+            this.BtnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscar.FlatAppearance.BorderSize = 0;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnBuscar.Location = new System.Drawing.Point(482, 81);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnBuscar.Name = "BtnBuscar";
+            this.BtnBuscar.Size = new System.Drawing.Size(109, 31);
+            this.BtnBuscar.TabIndex = 10;
+            this.BtnBuscar.Text = "BUSCAR";
+            this.BtnBuscar.UseVisualStyleBackColor = true;
             // 
             // FrmMaletasPorProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 450);
+            this.Controls.Add(this.BtnBuscar);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmMaletasPorProveedor";
             this.Text = "FrmMaletasPorProveedor";
             this.Load += new System.EventHandler(this.FrmMaletasPorProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +187,9 @@
         private System.Windows.Forms.BindingSource tblDatosBindingSource3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource tblDatosBindingSource4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtnBuscar;
     }
 }

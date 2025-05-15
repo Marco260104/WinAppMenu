@@ -14,70 +14,33 @@ namespace WinAppMenu
 {
     public partial class FrmMaletasPorProveedor : Form
     {
-       
+        DataTable mochilasTable;
+
         public FrmMaletasPorProveedor()
         {
             InitializeComponent();
-     
+            string rutaXml = Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(rutaXml);
+            mochilasTable = dataSet.Tables[0];
+
+          
+            BtnBuscar.Click += BtnBuscar_Click;
         }
 
         private void FrmMaletasPorProveedor_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
-            MostrarDatosAgrupados();
-            
+            MostrarTodosLosDatos();
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void MostrarDatosAgrupados()
+        private void MostrarTodosLosDatos()
         {
             try
             {
-                string rutaXml = Path.Combine(Application.StartupPath,"XML", "Mochilas.xml");
-                DataSet ds = new DataSet();
-
-                if (!File.Exists(rutaXml))
-                {
-                    MessageBox.Show("No se encontró el archivo de datos.");
-                    return;
-                }
-
-                ds.ReadXml(rutaXml);
-
-                var tabla = ds.Tables["TblDatos"];
-
-                if (tabla == null)
-                {
-                    MessageBox.Show("La tabla 'TblDatos' no existe en el archivo XML.");
-                    return;
-                }
-
-                // Contar maletas por proveedor, cada fila es una maleta
-                var proveedores = tabla.AsEnumerable()
-                    .GroupBy(row => row.Field<string>("Proveedor"))
-                    .Select(g => new
-                    {
-                        Proveedor = g.Key,
-                        Cantidad = g.Count()
-                    });
-
-                // Crear DataTable para el reporte
-                DataTable dtAgrupado = new DataTable();
-                dtAgrupado.Columns.Add("Proveedor", typeof(string));
-                dtAgrupado.Columns.Add("NumeroDeMaletas", typeof(int));
-
-                foreach (var p in proveedores)
-                {
-                    dtAgrupado.Rows.Add(p.Proveedor, p.Cantidad);
-                }
-
-                // Pasar DataTable al ReportViewer
+                // Pasar DataTable completo al ReportViewer
                 reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", dtAgrupado));
-
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", mochilasTable));
                 reportViewer1.RefreshReport();
             }
             catch (Exception ex)
@@ -86,10 +49,54 @@ namespace WinAppMenu
             }
         }
 
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            FiltrarPorProveedor();
+        }
+
+        private void FiltrarPorProveedor()
+        {
+            try
+            {
+                string proveedorBuscado = textBox1.Text.Trim();
+
+                if (string.IsNullOrEmpty(proveedorBuscado))
+                {
+                    // Si el TextBox está vacío, mostrar todos los datos
+                    MostrarTodosLosDatos();
+                    return;
+                }
+
+                // Crear una vista filtrada por el proveedor ingresado
+                DataView vistaFiltrada = new DataView(mochilasTable);
+                vistaFiltrada.RowFilter = $"Proveedor LIKE '%{proveedorBuscado}%'";
+
+                // Verificar si hay resultados
+                if (vistaFiltrada.Count == 0)
+                {
+                    MessageBox.Show($"No se encontraron maletas del proveedor '{proveedorBuscado}'.");
+                    return;
+                }
+
+                // Pasar la vista filtrada al ReportViewer
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", vistaFiltrada));
+                reportViewer1.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al filtrar: " + ex.Message);
+            }
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         private void reportViewer1_Load_1(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
