@@ -45,5 +45,10 @@ namespace WinAppMenu
             reportViewer1.LocalReport.DataSources.Add(rds);
             reportViewer1.RefreshReport();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
