@@ -141,5 +141,11 @@ namespace WinAppMenu
         {
 
         }
+
+        private void mochilasPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMaletasXMarca Obj = new FrmMaletasXMarca();
+            Obj.ShowDialog();
+        }
     }
 }

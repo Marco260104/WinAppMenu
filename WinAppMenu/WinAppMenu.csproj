@@ -161,6 +161,12 @@
     <Compile Include="FrmMaletasPorProveedor.Designer.cs">
       <DependentUpon>FrmMaletasPorProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMaletasXMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMaletasXMarca.Designer.cs">
+      <DependentUpon>FrmMaletasXMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMostrarMaletasPorUso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMaletasPorProveedor.resx">
       <DependentUpon>FrmMaletasPorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMaletasXMarca.resx">
+      <DependentUpon>FrmMaletasXMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMostrarMaletasPorUso.resx">
       <DependentUpon>FrmMostrarMaletasPorUso.cs</DependentUpon>

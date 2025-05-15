@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mochilasPorMarcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,28 +107,28 @@
             // agregarProductoToolStripMenuItem
             // 
             this.agregarProductoToolStripMenuItem.Name = "agregarProductoToolStripMenuItem";
-            this.agregarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agregarProductoToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.agregarProductoToolStripMenuItem.Text = "&Agregar Producto";
             this.agregarProductoToolStripMenuItem.Click += new System.EventHandler(this.agregarProductoToolStripMenuItem_Click);
             // 
             // buscarProductoToolStripMenuItem
             // 
             this.buscarProductoToolStripMenuItem.Name = "buscarProductoToolStripMenuItem";
-            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarProductoToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.buscarProductoToolStripMenuItem.Text = "&Buscar Producto";
             this.buscarProductoToolStripMenuItem.Click += new System.EventHandler(this.buscarProductoToolStripMenuItem_Click);
             // 
             // editarProductoToolStripMenuItem
             // 
             this.editarProductoToolStripMenuItem.Name = "editarProductoToolStripMenuItem";
-            this.editarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editarProductoToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.editarProductoToolStripMenuItem.Text = "E&ditar Producto";
             this.editarProductoToolStripMenuItem.Click += new System.EventHandler(this.editarProductoToolStripMenuItem_Click);
             // 
             // eliminarProductoToolStripMenuItem
             // 
             this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.eliminarProductoToolStripMenuItem.Text = "&Eliminar Producto";
             this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
             // 
@@ -140,7 +141,8 @@
             this.maletasPorProveedorToolStripMenuItem,
             this.maletasPorColorToolStripMenuItem,
             this.mochilasPorPrecioToolStripMenuItem,
-            this.mochilasPorCapacidadToolStripMenuItem});
+            this.mochilasPorCapacidadToolStripMenuItem,
+            this.mochilasPorMarcaToolStripMenuItem});
             this.lASToolStripMenuItem.Name = "lASToolStripMenuItem";
             this.lASToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.lASToolStripMenuItem.Text = "Reportes";
@@ -269,12 +271,19 @@
             // 
             this.pictureBox1.Image = global::WinAppMenu.Properties.Resources.LogoMyBagMOCHILAS;
             this.pictureBox1.Location = new System.Drawing.Point(60, 65);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(280, 236);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
+            // 
+            // mochilasPorMarcaToolStripMenuItem
+            // 
+            this.mochilasPorMarcaToolStripMenuItem.Name = "mochilasPorMarcaToolStripMenuItem";
+            this.mochilasPorMarcaToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
+            this.mochilasPorMarcaToolStripMenuItem.Text = "Mochilas por Marca";
+            this.mochilasPorMarcaToolStripMenuItem.Click += new System.EventHandler(this.mochilasPorMarcaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -327,6 +336,7 @@
         private System.Windows.Forms.ToolStripMenuItem verTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mochilasPorCapacidadToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem mochilasPorMarcaToolStripMenuItem;
     }
 }
 
