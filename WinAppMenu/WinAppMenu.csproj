@@ -264,6 +264,7 @@
     <EmbeddedResource Include="registro.resx">
       <DependentUpon>registro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportePorColor.rdlc" />
     <EmbeddedResource Include="ReportePorProveedor.rdlc" />
     <EmbeddedResource Include="ReportePorUso.rdlc" />
     <None Include="DataSet1.xsc">
@@ -338,6 +339,7 @@
     <Content Include="IMAGENES\moch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="XML\Mochilas.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

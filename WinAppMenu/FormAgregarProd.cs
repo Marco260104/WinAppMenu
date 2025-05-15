@@ -53,8 +53,14 @@ namespace WinAppMenu
         {
             try
             {
-                // Ruta relativa para acceder al archivo XML
-                string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+                // Ruta relativa para acceder al archivo XML en la carpeta "XML"
+                string rutaXml = Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+
+                // Verificar si la carpeta "XML" existe, si no, crearla
+                if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
+                {
+                    Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
+                }
 
                 if (File.Exists(rutaXml))
                 {
@@ -91,8 +97,14 @@ namespace WinAppMenu
             if (!ValidarCampos())
                 return;
 
-            // Ruta relativa para acceder al archivo XML
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            // Ruta para el archivo XML en la carpeta "XML"
+            string rutaXml = Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+
+            // Verificar si la carpeta "XML" existe, si no, crearla
+            if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
+            {
+                Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
+            }
 
             dataSet11.ReadXml(rutaXml);
 

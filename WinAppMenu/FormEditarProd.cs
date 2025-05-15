@@ -18,12 +18,27 @@ namespace WinAppMenu
             InitializeComponent();
         }
 
+        private string ObtenerRutaXml()
+        {
+            // Ruta para el archivo XML en la carpeta "XML"
+            return Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+        }
+
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            string rutaXml = ObtenerRutaXml(); // Obtener la ruta dinámica del XML
+
+            // Verificar si la carpeta "XML" existe, si no, crearla
+            if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
+            {
+                Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
+            }
+
+            // Leer XML
             dataSet11.ReadXml(rutaXml);
             System.Data.DataRow[] vector, vectorAuxiliar;
             vector = dataSet11.TblDatos.Select("Codigo='" + TxtEBuscarCodigo.Text + "'");
+
             if (vector.Length > 0)
             {
                 MostrarEditar ObjMosEditar = new MostrarEditar(vector);
@@ -33,18 +48,18 @@ namespace WinAppMenu
                     ObjMosEditar.vectorDatos(vectorAuxiliar);
                     vectorAuxiliar[0].AcceptChanges();
                     dataSet11.WriteXml(rutaXml);
-                    MessageBox.Show("cambios guardados");
+                    MessageBox.Show("Cambios guardados");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("No se modifico los datos");
+                    MessageBox.Show("No se modificaron los datos");
                     this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("No se encontraron datos con ese codigo");
+                MessageBox.Show("No se encontraron datos con ese código");
             }
         }
 

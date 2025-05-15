@@ -18,9 +18,21 @@ namespace WinAppMenu
             InitializeComponent();
         }
 
+        private string ObtenerRutaXml()
+        {
+            // Ruta para el archivo XML en la carpeta "XML"
+            return Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+        }
+
         private void FormTotalProductos_Load(object sender, EventArgs e)
         {
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            string rutaXml = ObtenerRutaXml(); // Obtener la ruta dinámica del XML
+
+            // Verificar si la carpeta "XML" existe, si no, crearla
+            if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
+            {
+                Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
+            }
 
             if (System.IO.File.Exists(rutaXml))
             {
@@ -39,12 +51,12 @@ namespace WinAppMenu
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // Lógica adicional si es necesaria al hacer clic en una celda
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            // Lógica adicional si es necesaria cuando se hace clic en el PictureBox
         }
     }
 }
