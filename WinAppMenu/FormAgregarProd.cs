@@ -143,7 +143,8 @@ namespace WinAppMenu
             MessageBox.Show("Mochila agregada correctamente.");
 
             // Actualizar el contador para el próximo producto
-            IniciaContador();
+     
+            LimpiarCampos();
         }
 
         private void nMeses_ValueChanged(object sender, EventArgs e)
@@ -202,7 +203,26 @@ namespace WinAppMenu
                 }
             }
         }
+        private void LimpiarCampos()
+        {
+            // Resetear todos los campos a sus valores iniciales
+            cbTipo.SelectedIndex = -1;
+            cbUso.SelectedIndex = -1;
+            txtPrecio.Clear();
+            cbColor.SelectedIndex = -1;
+            txtMarca.Clear();
+            txtProveedor.Clear();
+            txtCapacidad.Clear();
+            txtDescripcion.Clear();
+            nMeses.Value = 0;
 
+            // Actualizar el código para el siguiente producto
+            IniciaContador();
+
+            // Enfocar el primer campo para el siguiente ingreso
+            if (cbTipo.Items.Count > 0)
+                cbTipo.Focus();
+        }
         private void txtMarca_TextChanged(object sender, EventArgs e)
         {
 
@@ -277,6 +297,12 @@ namespace WinAppMenu
                     btnAgregarMochila.Focus();
                 }
             }
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

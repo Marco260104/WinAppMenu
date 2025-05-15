@@ -53,6 +53,7 @@
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.nMeses = new System.Windows.Forms.NumericUpDown();
             this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.BtnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nMeses)).BeginInit();
@@ -60,7 +61,7 @@
             // 
             // btnAgregarMochila
             // 
-            this.btnAgregarMochila.BackgroundImage = global::WinAppMenu.Properties.Resources.btnRojo;
+            this.btnAgregarMochila.BackgroundImage = global::WinAppMenu.Properties.Resources.btnAzul;
             this.btnAgregarMochila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAgregarMochila.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarMochila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -335,11 +336,29 @@
             this.cbTipo.Size = new System.Drawing.Size(130, 29);
             this.cbTipo.TabIndex = 29;
             // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackgroundImage = global::WinAppMenu.Properties.Resources.btnRojo;
+            this.BtnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BtnAceptar.Location = new System.Drawing.Point(454, 347);
+            this.BtnAceptar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(109, 35);
+            this.BtnAceptar.TabIndex = 30;
+            this.BtnAceptar.Text = "SALIR";
+            this.BtnAceptar.UseVisualStyleBackColor = true;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
+            // 
             // FormAgregarProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 398);
+            this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.cbTipo);
             this.Controls.Add(this.nMeses);
             this.Controls.Add(this.cbColor);
@@ -401,5 +420,6 @@
         private System.Windows.Forms.ComboBox cbColor;
         private System.Windows.Forms.NumericUpDown nMeses;
         private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.Button BtnAceptar;
     }
 }

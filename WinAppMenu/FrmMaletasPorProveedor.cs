@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WinAppMenu
 {
@@ -20,83 +20,53 @@ namespace WinAppMenu
         {
             InitializeComponent();
             string rutaXml = Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
-            DataSet dataSet = new DataSet();
-            dataSet.ReadXml(rutaXml);
-            mochilasTable = dataSet.Tables[0];
+            dataSet1.ReadXml(rutaXml);
+            mochilasTable = dataSet1.Tables[0];
 
-          
+            // Configurar el evento para el botón de búsqueda
             BtnBuscar.Click += BtnBuscar_Click;
         }
 
         private void FrmMaletasPorProveedor_Load(object sender, EventArgs e)
         {
+            // Solo inicializar el reportViewer sin cargar datos
             this.reportViewer1.RefreshReport();
-            MostrarTodosLosDatos();
-        }
-
-        private void MostrarTodosLosDatos()
-        {
-            try
-            {
-                // Pasar DataTable completo al ReportViewer
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", mochilasTable));
-                reportViewer1.RefreshReport();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
         }
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            FiltrarPorProveedor();
-        }
-
-        private void FiltrarPorProveedor()
-        {
-            try
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                string proveedorBuscado = textBox1.Text.Trim();
-
-                if (string.IsNullOrEmpty(proveedorBuscado))
-                {
-                    // Si el TextBox está vacío, mostrar todos los datos
-                    MostrarTodosLosDatos();
-                    return;
-                }
-
-                // Crear una vista filtrada por el proveedor ingresado
-                DataView vistaFiltrada = new DataView(mochilasTable);
-                vistaFiltrada.RowFilter = $"Proveedor LIKE '%{proveedorBuscado}%'";
-
-                // Verificar si hay resultados
-                if (vistaFiltrada.Count == 0)
-                {
-                    MessageBox.Show($"No se encontraron maletas del proveedor '{proveedorBuscado}'.");
-                    return;
-                }
-
-                // Pasar la vista filtrada al ReportViewer
-                reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", vistaFiltrada));
-                reportViewer1.RefreshReport();
+                MessageBox.Show("Por favor, ingrese un nombre de proveedor.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
-            catch (Exception ex)
+
+            string proveedorBuscado = textBox1.Text.Trim();
+            DataView vistaFiltrada = new DataView(mochilasTable);
+            vistaFiltrada.RowFilter = $"Proveedor LIKE '%{proveedorBuscado}%'";
+
+            if (vistaFiltrada.Count == 0)
             {
-                MessageBox.Show("Error al filtrar: " + ex.Message);
+                MessageBox.Show($"No se encontraron maletas del proveedor '{proveedorBuscado}'.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
+
+            // Cargar el informe con los datos filtrados
+            Microsoft.Reporting.WinForms.ReportDataSource rds =
+                new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", vistaFiltrada);
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(rds);
+            reportViewer1.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-            
+            // Este método puede quedar vacío
         }
 
-        private void reportViewer1_Load_1(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

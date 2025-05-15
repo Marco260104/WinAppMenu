@@ -29,38 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaletasPorProveedor));
-            this.tblDatosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tblDatosBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new WinAppMenu.DataSet1();
+            this.tblDatosBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tblDatosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tblDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tblDatosBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.BtnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
-            // tblDatosBindingSource3
+            // tblDatosBindingSource4
             // 
-            this.tblDatosBindingSource3.DataMember = "TblDatos";
-            this.tblDatosBindingSource3.DataSource = this.dataSet1;
+            this.tblDatosBindingSource4.DataMember = "TblDatos";
+            this.tblDatosBindingSource4.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblDatosBindingSource3
+            // 
+            this.tblDatosBindingSource3.DataMember = "TblDatos";
+            this.tblDatosBindingSource3.DataSource = this.dataSet1;
             // 
             // tblDatosBindingSource2
             // 
@@ -74,16 +79,15 @@
             // 
             // reportViewer1
             // 
-            reportDataSource4.Name = "DataSet1";
-            reportDataSource4.Value = this.tblDatosBindingSource4;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.tblDatosBindingSource4;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorProveedor.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(25, 131);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(587, 307);
             this.reportViewer1.TabIndex = 2;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load_1);
             // 
             // tblDatosBindingSource1
             // 
@@ -111,11 +115,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Mochilas por Proveedor";
             // 
-            // tblDatosBindingSource4
-            // 
-            this.tblDatosBindingSource4.DataMember = "TblDatos";
-            this.tblDatosBindingSource4.DataSource = this.dataSet1;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -134,6 +133,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 26);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // BtnBuscar
             // 
@@ -166,13 +166,13 @@
             this.Name = "FrmMaletasPorProveedor";
             this.Text = "FrmMaletasPorProveedor";
             this.Load += new System.EventHandler(this.FrmMaletasPorProveedor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
