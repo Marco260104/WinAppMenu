@@ -309,7 +309,7 @@
             this.BtnBuscar.Location = new System.Drawing.Point(251, 162);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(145, 38);
+            this.BtnBuscar.Size = new System.Drawing.Size(163, 38);
             this.BtnBuscar.TabIndex = 8;
             this.BtnBuscar.Text = "BUSCAR";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -374,7 +374,7 @@
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.LblCodigo);
             this.Controls.Add(this.labelTITULO);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormBuscarProd";
             this.Text = "FormBuscarProd";
             this.Load += new System.EventHandler(this.FormBuscarProd_Load);

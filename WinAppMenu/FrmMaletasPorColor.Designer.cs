@@ -92,7 +92,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(23, 183);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(731, 661);
+            this.reportViewer1.Size = new System.Drawing.Size(943, 661);
             this.reportViewer1.TabIndex = 4;
             // 
             // cbColor
@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 866);
+            this.ClientSize = new System.Drawing.Size(1004, 866);
             this.Controls.Add(this.LblSeleccioneColor);
             this.Controls.Add(this.cbColor);
             this.Controls.Add(this.reportViewer1);

@@ -83,10 +83,10 @@
             reportDataSource1.Value = this.tblDatosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorPrecio.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(179, 167);
+            this.reportViewer1.Location = new System.Drawing.Point(46, 181);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(672, 682);
+            this.reportViewer1.Size = new System.Drawing.Size(847, 682);
             this.reportViewer1.TabIndex = 6;
             // 
             // btnMostrar
