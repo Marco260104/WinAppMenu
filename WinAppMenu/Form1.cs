@@ -231,7 +231,7 @@ namespace WinAppMenu
                 MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            FrmMaletasXMarca Obj = new FrmMaletasXMarca();
+            FrmMochilasXMarca Obj = new FrmMochilasXMarca();
             Obj.ShowDialog();
         }
 

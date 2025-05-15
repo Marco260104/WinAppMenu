@@ -186,7 +186,10 @@ namespace WinAppMenu
 
         private void nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                contraseña.Focus();
+            }
         }
     }
 }

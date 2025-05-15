@@ -94,5 +94,10 @@ namespace WinAppMenu
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+        private void reportViewer1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
