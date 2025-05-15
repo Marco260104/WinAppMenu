@@ -19,6 +19,19 @@ namespace WinAppMenu
             InitializeComponent();
         }
 
+        private bool HayDatosRegistrados()
+        {
+            string rutaXml = Path.Combine(Application.StartupPath,"XML" ,"Mochilas.xml");
+
+            if (!File.Exists(rutaXml))
+                return false;
+
+            DataSet ds = new DataSet();
+            ds.ReadXml(rutaXml);
+
+            return ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0;
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -37,18 +50,33 @@ namespace WinAppMenu
 
         private void buscarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FormBuscarProd ObjBuscar = new FormBuscarProd();
             ObjBuscar.ShowDialog();
         }
 
         private void editarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FormEditarProd ObjEditar = new FormEditarProd();    
             ObjEditar.ShowDialog();
         }
 
         private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FormEliminarProd ObjEliminar = new FormEliminarProd();
             ObjEliminar.ShowDialog();
         }
@@ -66,6 +94,11 @@ namespace WinAppMenu
 
         private void totalProductosRegistradosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FormTotalProductos ObjTotal = new FormTotalProductos();
             ObjTotal.ShowDialog();
         }
@@ -111,35 +144,65 @@ namespace WinAppMenu
 
         private void verTodosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
         }
 
         private void maletasPorUsoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMostrarMaletasPorUso ObjMaletasUso = new FrmMostrarMaletasPorUso();
             ObjMaletasUso.ShowDialog();
         }
 
         private void porMesesDeGarantíaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasPorGarantia ObjMaletasGarantia = new FrmMaletasPorGarantia();
             ObjMaletasGarantia.ShowDialog();
         }
 
         private void maletasPorProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasPorProveedor ObjMaletasPorProveedor = new FrmMaletasPorProveedor();
             ObjMaletasPorProveedor.ShowDialog();
         }
 
         private void maletasPorColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasPorColor ObjMaletasPorColor = new FrmMaletasPorColor();
             ObjMaletasPorColor.ShowDialog();
         }
 
         private void mochilasPorPrecioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasPorPrecio ObjMaletasPorPrecio = new FrmMaletasPorPrecio();
             ObjMaletasPorPrecio.ShowDialog();
 
@@ -147,6 +210,11 @@ namespace WinAppMenu
 
         private void mochilasPorCapacidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasPorCapacidad ObjMaletasPorCapacidad = new FrmMaletasPorCapacidad();
             ObjMaletasPorCapacidad.ShowDialog();
         }
@@ -158,8 +226,18 @@ namespace WinAppMenu
 
         private void mochilasPorMarcaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!HayDatosRegistrados())
+            {
+                MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             FrmMaletasXMarca Obj = new FrmMaletasXMarca();
             Obj.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
