@@ -95,6 +95,12 @@
     <Compile Include="FormAgregarProd.Designer.cs">
       <DependentUpon>FormAgregarProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBienvenida.Designer.cs">
+      <DependentUpon>FormBienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBuscarProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarProd.resx">
       <DependentUpon>FormAgregarProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBienvenida.resx">
+      <DependentUpon>FormBienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarProd.resx">
       <DependentUpon>FormBuscarProd.cs</DependentUpon>
