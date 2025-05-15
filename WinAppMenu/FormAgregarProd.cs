@@ -105,7 +105,10 @@ namespace WinAppMenu
             {
                 Directory.CreateDirectory(Path.Combine(Application.StartupPath, "XML"));
             }
-
+            if (!File.Exists(rutaXml))
+            {
+                File.Create(rutaXml).Dispose(); // Crear archivo vacío
+            }
             dataSet11.ReadXml(rutaXml);
 
             // Crear un nuevo objeto para agregar la mochila
