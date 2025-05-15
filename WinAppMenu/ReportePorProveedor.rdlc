@@ -196,21 +196,29 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox3">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Mochilas por Proveedor</Value>
+                  <Value>Mochilas y Bolsos de alta calidad
+en diferentes modelos
+para toda ocación</Value>
                   <Style>
-                    <FontSize>20pt</FontSize>
-                    <Color>White</Color>
+                    <FontFamily>Cascadia Code</FontFamily>
                   </Style>
                 </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
                 <TextRun>
-                  <Value xml:space="preserve">
+                  <Value>REPORTE POR USO
 </Value>
                   <Style>
                     <FontFamily>Cascadia Code</FontFamily>
@@ -223,8 +231,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.57891cm</Top>
-          <Left>3.28717cm</Left>
+          <Top>0.55969cm</Top>
+          <Left>4.06047cm</Left>
           <Height>2.16104cm</Height>
           <Width>9.67021cm</Width>
           <Style>
@@ -237,12 +245,41 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>LogoMyBagMOCHILAS</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.53365cm</Top>
+          <Left>1.37675cm</Left>
+          <Height>2.135cm</Height>
+          <Width>1.73812cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>LogoMyBagMOCHILAS1</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.53365cm</Top>
+          <Left>14.24151cm</Left>
+          <Height>2.16104cm</Height>
+          <Width>1.84396cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
         </Border>
-        <BackgroundColor>MidnightBlue</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -257,9 +294,9 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>My Bag, un mundo de Mochila. Av. Circunvalacion 304 y Roca. </Value>
+                  <Value>Todos los derechos reservados,</Value>
                   <Style>
-                    <Color>White</Color>
+                    <FontFamily>Cascadia Code</FontFamily>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -270,48 +307,22 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>www.MyBag.com</Value>
+                  <Value>MY BAG CORPORATION</Value>
                   <Style>
-                    <Color>White</Color>
+                    <FontFamily>Cascadia Code</FontFamily>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>telf 099995678</Value>
-                  <Style>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Riobamba - Ecuador</Value>
-                  <Style>
-                    <Color>White</Color>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
+                <TextAlign>Right</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.17639cm</Top>
-          <Left>3.28717cm</Left>
-          <Height>2.25213cm</Height>
-          <Width>10.07658cm</Width>
+          <Top>1.07848cm</Top>
+          <Left>10.59026cm</Left>
+          <Height>1.20325cm</Height>
+          <Width>6.84458cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -327,7 +338,6 @@
         <Border>
           <Style>None</Style>
         </Border>
-        <BackgroundColor>DarkBlue</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
