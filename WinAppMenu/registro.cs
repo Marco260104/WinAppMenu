@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WinAppMenu
@@ -8,13 +9,13 @@ namespace WinAppMenu
     {
         public registro()
         {
-            
             InitializeComponent();
         }
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            // Solo permitir letras y control (backspace, etc)
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -36,6 +37,14 @@ namespace WinAppMenu
             if (string.IsNullOrEmpty(usuario) || usuario == "Ingrese su usuario")
             {
                 MessageBox.Show("Por favor ingrese su usuario.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Focus();
+                return;
+            }
+
+            // Validación: usuario solo letras (ya validado en KeyPress pero aquí por seguridad)
+            if (!usuario.All(char.IsLetter))
+            {
+                MessageBox.Show("El usuario solo debe contener letras.", "Usuario inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsuario.Focus();
                 return;
             }
@@ -63,6 +72,19 @@ namespace WinAppMenu
                     File.Create(filePath).Close();
                 }
 
+                // Leer todo el archivo para verificar si ya existe el usuario
+                var lineas = File.ReadAllLines(filePath);
+                bool usuarioExiste = lineas.Any(line =>
+                    line.Split(',')[0].Trim().Equals($"Usuario: {usuario}", StringComparison.OrdinalIgnoreCase));
+
+                if (usuarioExiste)
+                {
+                    MessageBox.Show("El usuario ya existe. Por favor ingrese otro nombre de usuario.", "Usuario duplicado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Focus();
+                    return;
+                }
+
+                // Guardar nuevo usuario
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
                     sw.WriteLine($"Usuario: {usuario}, Contraseña: {contrasena}");
@@ -97,7 +119,7 @@ namespace WinAppMenu
             {
                 btnRegistro.Focus();
             }
-         }
+        }
 
         private void registro_Load(object sender, EventArgs e)
         {
