@@ -68,5 +68,26 @@ namespace WinAppMenu
         {
 
         }
+
+        private void BtnBuscar_Click_1(object sender, EventArgs e)
+        {
+            reportViewer1.Visible = true;
+        }
+
+        private void BtnBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            BtnBuscar_Click_1(sender, e);
+        }
+
+        private void BtnAceptar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }
