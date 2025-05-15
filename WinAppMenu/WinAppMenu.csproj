@@ -179,6 +179,12 @@
     <Compile Include="FrmReporteTotal.Designer.cs">
       <DependentUpon>FrmReporteTotal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTotalProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTotalProd.Designer.cs">
+      <DependentUpon>FrmTotalProd.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,7 +374,9 @@
     <Content Include="IMAGENES\moch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="XML\Mochilas.xml" />
+    <Content Include="XML\Mochilas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
