@@ -30,7 +30,6 @@ namespace WinAppMenu
         {
             if (esModoReset)
             {
-             
                 LblRTipo.Text = "";
                 LblRUso.Text = "";
                 LblRColor.Text = "";
@@ -41,39 +40,49 @@ namespace WinAppMenu
                 LblRGarantia.Text = "";
                 LblRDescripcion.Text = "";
 
-              
                 BtnBuscar.BackgroundImage = System.Drawing.Image.FromFile(ObtenerRutaArchivo("btnAzul.png"));
                 BtnBuscar.BackgroundImageLayout = ImageLayout.Stretch;
                 BtnBuscar.Text = "BUSCAR";
                 BtnBuscar.ForeColor = Color.White;
 
                 TxtBuscarCodigo.Enabled = true;
+                TxtBuscarCodigo.Clear();
                 TxtBuscarCodigo.Focus();
 
-                esModoReset = false; 
+                TxtBuscarMarca.Enabled = true;
+                TxtBuscarMarca.Clear();
+
+                esModoReset = false;
             }
             else
             {
-              
+                // Validar código
                 if (string.IsNullOrWhiteSpace(TxtBuscarCodigo.Text) || !int.TryParse(TxtBuscarCodigo.Text, out int codigo) || codigo < 0)
                 {
-                    MessageBox.Show("Ingrese un código válido (número entero mayor o igual a 0).");
+                    MessageBox.Show("Ingrese un código válido.");
                     return;
                 }
 
-              
+                // Validar marca
+                if (string.IsNullOrWhiteSpace(TxtBuscarMarca.Text))
+                {
+                    MessageBox.Show("Ingrese una marca válida.");
+                    return;
+                }
+
+                string valorMarca = TxtBuscarMarca.Text.Trim().Replace("'", "''"); // Escapar comillas simples
+
                 string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
 
                 // Leer XML
                 dataSet11.ReadXml(rutaXml);
 
-              
+                // Buscar por código Y marca
                 System.Data.DataRow[] Vector;
-                Vector = dataSet11.TblDatos.Select("Codigo = '" + TxtBuscarCodigo.Text + "'");
+                Vector = dataSet11.TblDatos.Select($"Codigo = '{codigo}' AND Marca = '{valorMarca}'");
 
                 if (Vector.Length > 0)
                 {
-                  
                     LblRTipo.Text = Vector[0]["Tipo"].ToString();
                     LblRUso.Text = Vector[0]["Uso"].ToString();
                     LblRColor.Text = Vector[0]["Color"].ToString();
@@ -86,7 +95,6 @@ namespace WinAppMenu
 
                     MessageBox.Show("Producto Encontrado.");
 
-                  
                     BtnBuscar.BackgroundImage = System.Drawing.Image.FromFile(ObtenerRutaArchivo("btnGris.png"));
                     BtnBuscar.BackgroundImageLayout = ImageLayout.Stretch;
                     BtnBuscar.Text = "RESET";
@@ -95,12 +103,16 @@ namespace WinAppMenu
                     TxtBuscarCodigo.Clear();
                     TxtBuscarCodigo.Enabled = false;
 
+                    TxtBuscarMarca.Clear();
+                    TxtBuscarMarca.Enabled = false;
+
                     esModoReset = true;
                 }
                 else
                 {
                     MessageBox.Show("Producto Inexistente.");
                     TxtBuscarCodigo.Clear();
+                    TxtBuscarMarca.Clear();
                     TxtBuscarCodigo.Focus();
                 }
             }
@@ -125,14 +137,12 @@ namespace WinAppMenu
             }
         }
 
-        private void FormBuscarProd_Load(object sender, EventArgs e)
-        {
-          
-        }
-
+       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
           
         }
+
+        
     }
 }
