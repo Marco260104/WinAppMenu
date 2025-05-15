@@ -91,6 +91,7 @@
             this.contraseña.Text = "Ingrese la contraseña";
             this.contraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.contraseña.Enter += new System.EventHandler(this.contraseña_Enter_1);
+            this.contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseña_KeyPress);
             this.contraseña.Leave += new System.EventHandler(this.contraseña_Leave_1);
             // 
             // nombre

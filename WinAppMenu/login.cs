@@ -191,5 +191,13 @@ namespace WinAppMenu
                 contraseña.Focus();
             }
         }
+
+        private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAgregarMochila.Focus();
+            }
+        }
     }
 }
