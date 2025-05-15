@@ -81,7 +81,12 @@ namespace WinAppMenu
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            BtnBuscar_Click_1(sender, e);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Evitar el sonido de error al presionar Enter
+                BtnBuscar_Click_1(sender, e);
+            }
+            
         }
 
         private void BtnAceptar_Click(object sender, EventArgs e)
