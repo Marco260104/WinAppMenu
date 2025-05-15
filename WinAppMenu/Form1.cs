@@ -149,6 +149,8 @@ namespace WinAppMenu
                 MessageBox.Show("No hay datos registrados para mostrar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            FrmReporteTotal ObjReporteTotal = new FrmReporteTotal();
+            ObjReporteTotal.ShowDialog();
 
         }
 

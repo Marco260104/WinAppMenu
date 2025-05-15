@@ -168,12 +168,22 @@ namespace WinAppMenu
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             try
             {
+                double precio;
                 
                 if (e.KeyChar == (char)Keys.Enter)
                 {
+                    precio = double.Parse(txtPrecio.Text);
 
+                    if (precio < 0)
+                    {
+                        txtPrecio.Clear();
+                        MessageBox.Show("El precio no puede ser negativo.");
+                        txtPrecio.Focus();
+                        return;
+                    }
                         cbColor.Focus();
                     
                 }
@@ -303,6 +313,11 @@ namespace WinAppMenu
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
