@@ -163,15 +163,7 @@ namespace WinAppMenu
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            double precio = double.Parse(txtPrecio.Text);
-
-            if (precio < 0)
-            {
-                txtPrecio.Clear();
-                MessageBox.Show("El precio no puede ser negativo.");
-                txtPrecio.Focus();
-                return;
-            }
+           
         }
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
