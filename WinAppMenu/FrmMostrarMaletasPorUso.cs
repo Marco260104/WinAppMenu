@@ -17,7 +17,7 @@ namespace WinAppMenu
         public FrmMostrarMaletasPorUso()
         {
             InitializeComponent();
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            string rutaXml = Path.Combine(Application.StartupPath,"XML", "Mochilas.xml");
             dataSet1.ReadXml(rutaXml);
             mochilasTable = dataSet1.Tables[0];
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;

@@ -18,7 +18,7 @@ namespace WinAppMenu
         public FrmMaletasPorColor()
         {
             InitializeComponent();
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            string rutaXml = Path.Combine(Application.StartupPath,"XML", "Mochilas.xml");
             dataSet11.ReadXml(rutaXml);
             mochilasTable = dataSet11.Tables[0];
             cbColor.SelectedIndexChanged += cbColor_SelectedIndexChanged;

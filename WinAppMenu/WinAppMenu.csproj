@@ -95,12 +95,6 @@
     <Compile Include="FormAgregarProd.Designer.cs">
       <DependentUpon>FormAgregarProd.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBienvenida.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBienvenida.Designer.cs">
-      <DependentUpon>FormBienvenida.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBuscarProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +118,6 @@
     </Compile>
     <Compile Include="FormTotalProductos.Designer.cs">
       <DependentUpon>FormTotalProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmAcercaDe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAcercaDe.Designer.cs">
-      <DependentUpon>FrmAcercaDe.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMaletasPorCapacidad.cs">
       <SubType>Form</SubType>
@@ -212,9 +200,6 @@
     <EmbeddedResource Include="FormAgregarProd.resx">
       <DependentUpon>FormAgregarProd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBienvenida.resx">
-      <DependentUpon>FormBienvenida.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarProd.resx">
       <DependentUpon>FormBuscarProd.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +259,7 @@
       <DependentUpon>registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportePorColor.rdlc" />
+    <EmbeddedResource Include="ReportePorGarantia.rdlc" />
     <EmbeddedResource Include="ReportePorProveedor.rdlc" />
     <EmbeddedResource Include="ReportePorUso.rdlc" />
     <None Include="DataSet1.xsc">
@@ -324,6 +310,9 @@
     <None Include="Resources\btnGris.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Html\acerca_de.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="IMAGENES\btnAzul.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -348,7 +337,10 @@
     <Content Include="IMAGENES\moch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="XML\Mochilas.xml" />
+    <Content Include="XML\Mochilas.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

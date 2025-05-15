@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,8 +82,20 @@ namespace WinAppMenu
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAcercaDe ObjAcercade = new FrmAcercaDe();
-            ObjAcercade.ShowDialog();
+            string rutaHtml = Path.Combine(Application.StartupPath, "Html", "acerca_de.html");
+
+            if (File.Exists(rutaHtml))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = rutaHtml,
+                    UseShellExecute = true
+                });
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el archivo acerca_de.html", "Error");
+            }
         }
 
         private void actualizarDatosToolStripMenuItem_Click(object sender, EventArgs e)
