@@ -125,12 +125,6 @@
     <Compile Include="FormTotalProductos.Designer.cs">
       <DependentUpon>FormTotalProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAcercaDe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAcercaDe.Designer.cs">
-      <DependentUpon>FrmAcercaDe.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmMaletasPorCapacidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +309,9 @@
     <None Include="Resources\btnGris.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Html\acerca_de.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="IMAGENES\btnAzul.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
