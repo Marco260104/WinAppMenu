@@ -8,6 +8,7 @@ namespace WinAppMenu
     {
         public registro()
         {
+            
             InitializeComponent();
         }
 
@@ -15,24 +16,43 @@ namespace WinAppMenu
         {
             if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 
         private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContra.Text))
+            string usuario = txtUsuario.Text.Trim();
+            string contrasena = txtContra.Text;
+
+            if (string.IsNullOrEmpty(usuario) || usuario == "Ingrese su usuario")
             {
-                MessageBox.Show("Por favor ingresa tanto el nombre de usuario como la contraseña.");
+                MessageBox.Show("Por favor ingrese su usuario.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Focus();
                 return;
             }
 
-            string usuario = txtUsuario.Text;
-            string contrasena = txtContra.Text;
+            if (string.IsNullOrEmpty(contrasena) || contrasena == "Ingrese la contraseña")
+            {
+                MessageBox.Show("Por favor ingrese su contraseña.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContra.Focus();
+                return;
+            }
+
+            if (contrasena.Contains(" "))
+            {
+                MessageBox.Show("La contraseña no debe contener espacios.", "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContra.Focus();
+                return;
+            }
 
             try
             {
@@ -49,17 +69,39 @@ namespace WinAppMenu
                 }
 
                 MessageBox.Show("Usuario registrado con éxito!");
-                txtUsuario.Clear();  
-                txtContra.Clear();   
+                txtUsuario.Clear();
+                txtContra.Clear();
+                txtUsuario.Focus();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al registrar el usuario: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al registrar el usuario: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtUsuario_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtContra.Focus();
+            }
+        }
+
+        private void txtContra_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnRegistro.Focus();
+            }
+         }
+
+        private void registro_Load(object sender, EventArgs e)
+        {
+            txtUsuario.Focus();
         }
     }
 }

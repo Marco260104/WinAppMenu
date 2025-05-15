@@ -105,6 +105,7 @@
             this.nombre.Text = "Ingrese su usuario";
             this.nombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nombre.Enter += new System.EventHandler(this.nombre_Enter_1);
+            this.nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_KeyPress);
             this.nombre.Leave += new System.EventHandler(this.nombre_Leave_1);
             // 
             // button1

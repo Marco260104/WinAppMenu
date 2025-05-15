@@ -53,6 +53,7 @@
             this.txtContra.Name = "txtContra";
             this.txtContra.Size = new System.Drawing.Size(196, 22);
             this.txtContra.TabIndex = 40;
+            this.txtContra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContra_KeyPress_1);
             // 
             // txtUsuario
             // 
@@ -60,6 +61,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(196, 22);
             this.txtUsuario.TabIndex = 39;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress_1);
             // 
             // label1
             // 
@@ -117,6 +119,7 @@
             this.Controls.Add(this.btnRegistro);
             this.Name = "registro";
             this.Text = "registro";
+            this.Load += new System.EventHandler(this.registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

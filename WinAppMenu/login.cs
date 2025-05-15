@@ -87,10 +87,33 @@ namespace WinAppMenu
 
         private void btnAgregarMochila_Click_1(object sender, EventArgs e)
         {
-            string usuario = nombre.Text;
+            string usuario = nombre.Text.Trim();
             string contrasena = contraseña.Text;
 
-            // Verificar que el usuario y la contraseña sean correctos
+            // Validar campos vacíos o con texto por defecto
+            if (string.IsNullOrEmpty(usuario) || usuario == "Ingrese su usuario")
+            {
+                MessageBox.Show("Por favor ingrese su usuario.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                nombre.Focus();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(contrasena) || contrasena == "Ingrese la contraseña")
+            {
+                MessageBox.Show("Por favor ingrese su contraseña.", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                contraseña.Focus();
+                return;
+            }
+
+            // Validar que la contraseña no contenga espacios
+            if (contrasena.Contains(" "))
+            {
+                MessageBox.Show("La contraseña no debe contener espacios.", "Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                contraseña.Focus();
+                return;
+            }
+
+            // Si pasó las validaciones, verificar usuario y contraseña
             if (VerificarUsuario(usuario, contrasena))
             {
                 this.Hide();
@@ -99,7 +122,9 @@ namespace WinAppMenu
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos.");
+                MessageBox.Show("Usuario o contraseña incorrectos.", "Error de autenticación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                contraseña.Clear();
+                contraseña.Focus();
             }
         }
 
@@ -157,6 +182,11 @@ namespace WinAppMenu
                 contraseña.ForeColor = Color.Black;
                 contraseña.UseSystemPasswordChar = false;
             }
+        }
+
+        private void nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }
