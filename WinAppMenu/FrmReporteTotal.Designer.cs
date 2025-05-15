@@ -30,34 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet1 = new WinAppMenu.DataSet1();
             this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            this.dataSet1 = new WinAppMenu.DataSet1();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tblDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // tblDatosBindingSource
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.tblDatosBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReporteTotal.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(163, 73);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
-            this.reportViewer1.TabIndex = 0;
+            this.tblDatosBindingSource.DataMember = "TblDatos";
+            this.tblDatosBindingSource.DataSource = this.dataSet1;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tblDatosBindingSource
+            // reportViewer1
             // 
-            this.tblDatosBindingSource.DataMember = "TblDatos";
-            this.tblDatosBindingSource.DataSource = this.dataSet1;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.tblDatosBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReporteTotal.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // tblDatosBindingSource1
+            // 
+            this.tblDatosBindingSource1.DataMember = "TblDatos";
+            this.tblDatosBindingSource1.DataSource = this.dataSet1;
             // 
             // FrmReporteTotal
             // 
@@ -68,8 +76,9 @@
             this.Name = "FrmReporteTotal";
             this.Text = "FrmReporteTotal";
             this.Load += new System.EventHandler(this.FrmReporteTotal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -79,5 +88,6 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource tblDatosBindingSource;
         private DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource tblDatosBindingSource1;
     }
 }

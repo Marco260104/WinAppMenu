@@ -196,7 +196,15 @@ namespace WinAppMenu
 
         private void cbColor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            double precio = double.Parse(txtPrecio.Text);
 
+            if (precio < 0)
+            {
+                txtPrecio.Clear();
+                MessageBox.Show("El precio no puede ser negativo.");
+                txtPrecio.Focus();
+                return;
+            }
         }
 
         private void cbColor_KeyPress(object sender, KeyPressEventArgs e)
