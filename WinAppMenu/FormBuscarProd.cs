@@ -43,7 +43,7 @@ namespace WinAppMenu
                 LblRProveedor.Text = "";
                 LblRCapacidad.Text = "";
                 LblRGarantia.Text = "";
-                LblRDescripcion.Text = "";
+                
 
                 BtnBuscar.BackgroundImage = System.Drawing.Image.FromFile(ObtenerRutaArchivo("btnAzul.png"));
                 BtnBuscar.BackgroundImageLayout = ImageLayout.Stretch;
@@ -102,7 +102,13 @@ namespace WinAppMenu
                     LblRProveedor.Text = Vector[0]["Proveedor"].ToString();
                     LblRCapacidad.Text = Vector[0]["Capacidad"].ToString() + " cm^3";
                     LblRGarantia.Text = Vector[0]["Garantia"].ToString();
-                    LblRDescripcion.Text = Vector[0]["Descripcion"].ToString();
+                    TxtMul.Multiline = true;              // Permite múltiples líneas
+                    TxtMul.ReadOnly = true;              // No se puede editar
+                    TxtMul.ScrollBars = ScrollBars.Vertical; // Muestra barra si el texto es largo
+                    TxtMul.BorderStyle = BorderStyle.None;
+                    TxtMul.BackColor = this.BackColor;
+                    TxtMul.Text = Vector[0]["Descripcion"].ToString();
+                   
 
                     MessageBox.Show("Producto Encontrado.");
 
