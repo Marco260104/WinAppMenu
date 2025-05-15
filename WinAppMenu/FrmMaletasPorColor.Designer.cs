@@ -30,26 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMaletasPorColor));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.tblDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new WinAppMenu.DataSet1();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataSet11 = new WinAppMenu.DataSet1();
             this.tblDatosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.tblDatosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.LblSeleccioneColor = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tblDatosBindingSource1
+            // 
+            this.tblDatosBindingSource1.DataMember = "TblDatos";
+            this.tblDatosBindingSource1.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 11);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 135);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -68,11 +78,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Mochilas por Color";
             // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tblDatosBindingSource
             // 
             this.tblDatosBindingSource.DataMember = "TblDatos";
@@ -80,21 +85,15 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.tblDatosBindingSource1;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.tblDatosBindingSource1;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorColor.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(23, 183);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(731, 194);
+            this.reportViewer1.Size = new System.Drawing.Size(731, 661);
             this.reportViewer1.TabIndex = 4;
-            
-            // 
-            // tblDatosBindingSource1
-            // 
-            this.tblDatosBindingSource1.DataMember = "TblDatos";
-            this.tblDatosBindingSource1.DataSource = this.dataSet11;
             // 
             // cbColor
             // 
@@ -135,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 478);
+            this.ClientSize = new System.Drawing.Size(766, 866);
             this.Controls.Add(this.LblSeleccioneColor);
             this.Controls.Add(this.cbColor);
             this.Controls.Add(this.reportViewer1);
@@ -145,10 +144,10 @@
             this.Name = "FrmMaletasPorColor";
             this.Text = "FrmMaletasPorColor";
             this.Load += new System.EventHandler(this.FrmMaletasPorColor_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDatosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

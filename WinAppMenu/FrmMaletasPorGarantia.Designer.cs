@@ -58,18 +58,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(110)))));
-            this.label1.Location = new System.Drawing.Point(189, 45);
+            this.label1.Location = new System.Drawing.Point(252, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 34);
+            this.label1.Size = new System.Drawing.Size(529, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mochilas por meses de Garantía";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(46, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(61, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 141);
+            this.pictureBox1.Size = new System.Drawing.Size(183, 174);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -79,9 +81,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Berlin Sans FB Demi", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(110)))));
-            this.label2.Location = new System.Drawing.Point(218, 100);
+            this.label2.Location = new System.Drawing.Point(291, 123);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(414, 31);
+            this.label2.Size = new System.Drawing.Size(524, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Selecciones los meses de garantía:";
             // 
@@ -114,9 +117,10 @@
             "22",
             "23",
             "24"});
-            this.comboBox1.Location = new System.Drawing.Point(638, 110);
+            this.comboBox1.Location = new System.Drawing.Point(851, 135);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -126,22 +130,24 @@
             reportDataSource1.Value = this.tblDatosBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WinAppMenu.ReportePorGarantia.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(46, 176);
+            this.reportViewer1.Location = new System.Drawing.Point(61, 217);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(713, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(950, 598);
             this.reportViewer1.TabIndex = 4;
             // 
             // FrmMaletasPorGarantia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 850);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMaletasPorGarantia";
             this.Text = "FrmMaletasPorGarantia";
             this.Load += new System.EventHandler(this.FrmMaletasPorGarantia_Load);
