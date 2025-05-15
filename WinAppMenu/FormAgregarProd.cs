@@ -54,7 +54,8 @@ namespace WinAppMenu
             try
             {
                 // Ruta relativa para acceder al archivo XML en la carpeta "XML"
-                string rutaXml = Path.Combine(Application.StartupPath, "XML", "Mochilas.xml");
+                string rutaXml = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Mochilas.xml");
+
 
                 // Verificar si la carpeta "XML" existe, si no, crearla
                 if (!Directory.Exists(Path.Combine(Application.StartupPath, "XML")))
@@ -177,10 +178,10 @@ namespace WinAppMenu
                 {
                     precio = double.Parse(txtPrecio.Text);
 
-                    if (precio < 0)
+                    if (precio < 1)
                     {
                         txtPrecio.Clear();
-                        MessageBox.Show("El precio no puede ser negativo.");
+                        MessageBox.Show("El precio no puede ser negativo ni 0.");
                         txtPrecio.Focus();
                         return;
                     }
