@@ -17,7 +17,7 @@ namespace WinAppMenu
         public FrmMaletasPorGarantia()
         {
             InitializeComponent();
-            string rutaXml = Path.Combine(Application.StartupPath, "Mochilas.xml");
+            string rutaXml = Path.Combine(Application.StartupPath,"XML", "Mochilas.xml");
             dataSet1.ReadXml(rutaXml);
             mochilasTable = dataSet1.Tables[0];
 
