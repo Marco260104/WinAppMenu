@@ -107,7 +107,14 @@ namespace WinAppMenu
             }
             if (!File.Exists(rutaXml))
             {
-                File.Create(rutaXml).Dispose(); // Crear archivo vacío
+
+                using (StreamWriter writer = new StreamWriter(rutaXml))
+                {
+                    writer.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+                    writer.WriteLine("<DataSet1 xmlns=\"http://tempuri.org/DataSet1.xsd\">");
+                    writer.WriteLine("</DataSet1>");
+
+                }
             }
             dataSet11.ReadXml(rutaXml);
 
